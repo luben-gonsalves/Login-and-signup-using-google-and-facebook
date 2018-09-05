@@ -1,0 +1,39 @@
+
+<h2 class="page-header">Register</h2>
+{{#if user}}
+        <div class="alert alert-danger">Username has taken already try new</div>
+{{/if}}
+{{#if mail}}
+        <div class="alert alert-danger">Email has taken already try new</div>
+{{/if}}
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+
+<div><a class="btn red darken-1" href="/auth/google"><i class="fab fa-google"></i><i class="fa ga-google left"></i> Sign up with Google</a></div>
+<div><a class="btn blue darken-1" href="/auth/facebook"><i class="fab fa-facebook"></i><i class="fa ga-google left"></i> Sign up with Facebook</a></div>
+<form method="post" action="/users/register">
+   <div class="form-group ">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
